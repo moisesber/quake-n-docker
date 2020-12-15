@@ -30,5 +30,7 @@ RUN dpkg --add-architecture i386 \
   && chmod +x sqpro \
   && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT "/nquakesv/start_servers.sh"
+COPY scripts/* .
+
+ENTRYPOINT "/nquakesv/quake-n-server.sh"
 CMD ["mvdsv", "27500"]
