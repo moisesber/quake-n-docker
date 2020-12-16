@@ -10,12 +10,17 @@ These instructions will cover usage information and for the docker container
 
 ### Prerequisities
 
-
 In order to run this container you'll need docker installed.
 
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
+
+## Client restrictions
+To be able to connect to the server you *need* to use a modern client, meaning that the old Proquake clients *WILL NOT WORK*. The reason for that is that the old Netquake clients use a random high port to communicate with each client connected, after the connection is stablished through the "main" server port (default is 26000). Since it is problematic to port forward a hugh range of port to the Docker image the best way to solve this was to use a modern NetQuake server (Darkplaces in this case). For more info please refer to [this commit](https://github.com/moisesber/quake-n-docker/commit/410f16afe6e2190c0fddc209d0661d2044d89fe0). Therefore, please use one of the following clients to connect to the server:
+
+ - [DarkPlaces](https://icculus.org/twilight/darkplaces/)
+ - [FTE](https://fte.triptohell.info/)
 
 ### Usage
 
