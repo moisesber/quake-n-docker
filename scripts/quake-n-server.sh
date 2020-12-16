@@ -6,4 +6,4 @@ CONFIG_FILE=${CONFIG_FILE:-ctfcoord.cfg}
 ZONE=${ZONE:-512}
 DEDICATED=${DEDICATED:-16}
 
-./sqpro -dedicated ${DEDICATED} -game ${GAME_DIR} -condebug -nojoy -zone ${ZONE} +exec ${CONFIG_FILE} map ${MAP}
+./darkplaces-linux-686-dedicated -dedicated ${DEDICATED} -game ${GAME_DIR} -condebug -nojoy -zone ${ZONE} +exec ${CONFIG_FILE} map ${MAP}

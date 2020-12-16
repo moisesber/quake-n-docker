@@ -22,12 +22,11 @@ WORKDIR "/nquakesv"
 
 RUN dpkg --add-architecture i386 \
   && apt-get update \
-  && apt-get install --no-install-recommends gcc-6-base:i386 libc6:i386 libgcc1:i386 libx86-1:i386 curl -y \
+  && apt-get install --no-install-recommends gcc-6-base:i386 libc6:i386 libgcc1:i386 libx86-1:i386 libjpeg-turbo8:i386 zlib1g:i386 curl -y \
   && curl -O -s http://archive.debian.org/debian/pool/main/s/svgalib/libsvga1_1.4.3-33_i386.deb \
   && dpkg -i --force-all libsvga1_1.4.3-33_i386.deb \
   && rm -rf libsvga1_1.4.3-33_i386.deb \
-  && curl -O -s http://kauler.com/games/quake1/sqpro350.zip && unzip sqpro350.zip \ 
-  && chmod +x sqpro \
+  && curl -O -s https://www.icculus.org/twilight/darkplaces/files/darkplacesengine20140513.zip && unzip darkplacesengine20140513.zip \ 
   && rm -rf /var/lib/apt/lists/*
 
 COPY scripts/* .
